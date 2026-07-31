@@ -322,6 +322,7 @@ nextflow run Patholon.nf [options] -resume
 ## Citation
 
 If you use this pipeline for analysis, please cite as:
+
 Betiku V.O xxxx
 
 A list of references for the tools used by the pipeline can be found in the [CITATIONS.md](https://github.com/viskky/Patholon/blob/main/docs/CITATIONS.md) file
