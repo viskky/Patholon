@@ -101,7 +101,7 @@ elif command -v conda &>/dev/null; then
     CONDA_CMD="conda"
 
 
-# ─── 4a. Check existing Anaconda3 installation ───────────────────────────────
+# ─── 5. Check existing Anaconda3 installation ───────────────────────────────
 elif [[ -f "$HOME/anaconda3/etc/profile.d/conda.sh" ]]; then
 
     info "Existing Anaconda3 installation found at:"
@@ -118,7 +118,7 @@ elif [[ -f "$HOME/anaconda3/etc/profile.d/conda.sh" ]]; then
     info "Existing Anaconda3 installation loaded ✓"
     info "Conda version: $(conda --version)"
 
-# ─── 4b. Install Anaconda3 ────────────────────────────────────────────────────
+# ─── 6. Install Anaconda3 ────────────────────────────────────────────────────
 else
 
     info "Neither Conda nor Mamba found."
@@ -172,7 +172,7 @@ fi
 conda tos accept --override-channels --channel https://repo.anaconda.com/pkgs/main
 conda tos accept --override-channels --channel https://repo.anaconda.com/pkgs/r
 
-# ─── 6. Create Conda Environment ─────────────────────────────────────────────
+# ─── 7. Create Conda Environment ─────────────────────────────────────────────
 section "Creating conda environment: Patholon-nf"
 
 # Check whether Patholon-nf already exists
@@ -217,22 +217,22 @@ else
 fi
 
 
-# ─── 6. Make bin/ scripts executable ─────────────────────────────────────────
+# ─── 8. Make bin/ scripts executable ─────────────────────────────────────────
 section "Setting script permissions"
 chmod +x bin/*.py 2>/dev/null || true
 info "bin/ scripts are executable ✓"
 
 
-# ─── 7. Update KronaTools taxonomy database ──────────────────────────────────
+# ─── 9. Update KronaTools taxonomy database ──────────────────────────────────
 section "Updating KronaTools taxonomy database"
 conda run -n Patholon-nf ktUpdateTaxonomy.sh 2>&1 || \
     warn "Could not update Krona taxonomy (may need internet access). Run manually:\n  conda run -n Patholon-nf ktUpdateTaxonomy.sh"
 
-# ─── 8. ABRicate database check ───────────────────────────────────────────────
+# ─── 10. ABRicate database check ───────────────────────────────────────────────
 section "Checking ABRicate databases"
 conda run -n Patholon-nf abricate --list || true
 
-# ─── 9. Print next steps ──────────────────────────────────────────────────────
+# ─── 11. Print next steps ──────────────────────────────────────────────────────
 section "Installation Complete!"
 echo ""
 info "Next steps:"
