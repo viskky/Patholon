@@ -3,9 +3,9 @@
 ![Platform](https://img.shields.io/badge/platform-linux-lightgrey)
 [![install with bioconda](https://img.shields.io/badge/install%20with-bioconda-brightgreen.svg?style=flat)](http://bioconda.github.io/recipes/python-nextflow/README.html)
 
-# 🧬 Patholon-nf
+# Patholon-nf
 
-> A custom Nextflow workflow for microbiome analysis of Oxford Nanopore sequencing data — detecting antimicrobial resistance (AMR) genes,
+> A custom pipeline for microbiome analysis of Oxford Nanopore sequencing data — detecting antimicrobial resistance (AMR) genes,
 > virulence factor, plasmids, protein domains, and microbial taxonomic diversity.
 
 ---
@@ -51,7 +51,7 @@ FASTQ Input
     │       │
     │       └─→ HMMsearch         Phage-like protein detection
     │    	   │
-    │       	   └─→ BLASTP     Protein Homology against a reference database
+    │          └─→ BLASTP         Protein Homology against a reference database
     │
     ├─→ Kraken2                   Taxonomic classification
     │
@@ -266,7 +266,7 @@ results/
 │
 ├── 04_quast/            		   QUAST HTML + TSV reports
 │
-├── 05_prokka/        		           GFF, FAA, GBK, FFN annotation files
+├── 05_prokka/        		       GFF, FAA, GBK, FFN annotation files
 │
 ├── 06_abricate/
 │   ├── <sample>/          		   Per-sample AMR TSV
@@ -282,11 +282,11 @@ results/
 │   └── <sample>/          		   Kraken2 report
 │
 ├── 10_krona/
-│   └── <sample>_krona.html        	   Interactive and visualised chart from Kraken2 report
+│   └── <sample>_krona.html        Interactive and visualised chart from Kraken2 report
 │
 ├── 11_multiqc/
-│   ├── multiqc_report.html        	   Unified QC and Taxonomy report
-│   └── multiqc_data/              	   Raw data
+│   ├── multiqc_report.html        Unified QC and Taxonomy report
+│   └── multiqc_data/              Raw data
 │
 └── pipeline_info/
     ├── timeline_*.html
@@ -324,7 +324,7 @@ nextflow run Patholon.nf [options] -resume
 If you use this pipeline for analysis, please cite as:
 Betiku V.O xxxx
 
-A list of references for the tools used by the pipeline can be found in the CITATIONS.md file
+A list of references for the tools used by the pipeline can be found in the [CITATIONS.md](https://github.com/viskky/Patholon/blob/main/docs/CITATIONS.md) file
 
 ---
 
