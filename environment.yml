@@ -1,0 +1,71 @@
+name: Patholon-nf
+
+channels:
+  - bioconda
+  - conda-forge
+
+dependencies:
+  - python=3.10
+
+  # Quality Control 
+  - bioconda::fastqc=0.12.1
+  - bioconda::nanoplot=1.42.0
+  
+  # Adapter Trimming 
+  - bioconda::porechop=0.2.4
+  - bioconda::seqkit=2.7.0
+
+  # Assembly 
+  - bioconda::flye=2.9.3
+  - bioconda::megahit=1.2.9
+
+  # Assembly QC 
+  - bioconda::quast=5.2.0
+
+  # Gene Annotation 
+  - bioconda::prokka=1.14.6
+
+  # AMR Detection 
+  - bioconda::abricate=1.0.1
+
+  # Phage Protein Detection 
+  - bioconda::hmmer=3.4
+
+  # Taxonomic Classification 
+  - bioconda::kraken2=2.1.3
+
+  # Diversity Visualization 
+  - bioconda::krona=2.8.1
+
+  # MultiQC Report 
+  - bioconda::multiqc=1.19
+
+  # Protein Homology Search 
+  - bioconda::blast=2.15.0
+
+  # Utilities 
+  - conda-forge::pigz
+  - conda-forge::pandas
+  - conda-forge::matplotlib
+  - conda-forge::seaborn
+  - conda-forge::plotly=5.18.0
+  - conda-forge::openjdk=17
+  
+  # Pip extras 
+  - pip
+  - pip:
+      - biopython>=1.81
+      - kaleido==0.2.1
+
+  - weasyprint=60.2
+  - jinja2=3.1
+  - pandas=2.2
+  # system dependencies
+  - cairo
+  - pango
+  - gdk-pixbuf
+  - harfbuzz
+  - libffi
+  - libjpeg-turbo
+  - libwebp
+  - fontconfig

@@ -1,0 +1,60 @@
+# ============================================================
+#  MultiQC Configuration — PATHOLON-NF Pipeline
+# ============================================================
+
+title: "Patholon-nf"
+subtitle: "Reads and Assembly QC | Microbial Taxonomy"
+intro_text: >
+  Quality control and taxonomic analysis summary for Oxford Nanopore
+  metagenome sequencing data processed through the Patholon workflow.
+
+report_comment: >
+  Generated automatically by Patholon-nf v1.0.0.
+  Inspect the Krona charts in results/09_krona/ for
+  interactive taxonomic diversity visualisation.
+
+# Output settings
+output_fn_name: multiqc_report.html
+data_dir_name:  multiqc_data
+
+# Show only these modules (in order)
+module_order:
+  - fastqc
+  - nanoplot
+  - quast
+  - kraken
+
+# Customise display
+table_cond_formatting_rules:
+  all_columns:
+    pass:
+      - s_eq: "pass"
+    warn:
+      - s_eq: "warn"
+    fail:
+      - s_eq: "fail"
+
+# FastQC display options
+fastqc_config:
+  status_checks:
+    - per_base_sequence_quality
+    - per_sequence_quality_scores
+    - per_base_n_content
+    - sequence_length_distribution
+
+# Colours
+custom_plot_config:
+  fastqc_sequence_quality_plot:
+    ymin: 0
+    ymax: 40
+
+# File search patterns
+sp:
+  fastqc/zip:
+    fn: "*_fastqc.zip"
+  nanoplot:     
+    fn: "*NanoStats.txt"
+  quast/tsv:
+    fn: "report.tsv"
+  kraken:
+    fn: "*_kraken2_report.txt"

@@ -1,0 +1,35 @@
+# Nextflow work directory
+work/
+.nextflow/
+.nextflow.log*
+
+# Results
+results/
+
+# Databases (too large for git)
+databases/
+*.tar.gz
+*.tar.bz2
+
+# Conda environments
+.conda/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+
+# Test outputs
+tests/output/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
